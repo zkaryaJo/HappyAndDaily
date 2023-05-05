@@ -1,2 +1,14 @@
 server:
   port : 8080
+
+spring:
+  devtools:
+    # Auto Restart
+    restart:
+      enabled: true
+      #additional-paths: static/**
+    # Live Reload
+    livereload:
+      enabled: true
+    thymeleaf:
+      cache: false

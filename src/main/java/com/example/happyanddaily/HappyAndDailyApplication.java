@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class HappyAndDailyApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(HappyAndDailyApplication.class, args);
     }
 
