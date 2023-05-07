@@ -5,22 +5,22 @@ spring:
   datasource:
     driverClassName: org.mariadb.jdbc.Driver
     url: jdbc:mariadb://192.168.0.28:4406/happyAndDaily?useUnicode=true&characterEncoding=utf-8
-    username: root
+    username: happyAndDaily
     password: root
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
   devtools:
-    # Auto Restart
     restart:
       enabled: true
-      #additional-paths: static/**
-    # Live Reload
     livereload:
       enabled: true
   thymeleaf:
     cache: false
-#    prefix: classpath:templates/
-#    suffix: .html
   mvc:
     view:
       suffix: .html
