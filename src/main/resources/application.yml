@@ -10,5 +10,12 @@ spring:
     # Live Reload
     livereload:
       enabled: true
-    thymeleaf:
-      cache: false
+  thymeleaf:
+    cache: false
+    prefix: classpath:templates/
+    suffix: .html
+
+
+#  mvc:
+#    view:
+#      suffix: .html
