@@ -8,12 +8,12 @@ public class BaseController {
 
     @GetMapping("/")
     public String base(){
-        return "base";
+        return "/layout/base";
     }
 
     @GetMapping("/base")
     public String base2(){
-        return "base";
+        return "/layout/base";
     }
 
 }

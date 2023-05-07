@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <th:block th:replace="fragment/head :: headFragment"></th:block>
+</head>
+  <body>
+    <!-- 네비게이션바 -->
+    <div include-html="navigationBar.html"></div>
+
+    <!-- Header-->
+    <div include-html="header.html"></div>
+
+    <!-- Content -->
+    <div include-html="/contents/base-section.html"></div>
+
+    <!-- Footer-->
+    <div include-html="footer.html"></div>
+
+    <!-- config fragment 사용 -->
+    <th:block th:replace="fragment/config :: configFragment"></th:block>
+  </body>
+</html>
