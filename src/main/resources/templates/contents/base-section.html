@@ -51,6 +51,19 @@
                     </div>
                 </div>
             </div>
+            <table class="table table-striped">
+                <tr>
+                    <th>이름</th>
+                    <th>가격</th>
+                    <th>등록날짜</th>
+                </tr>
+                <tr th:each="item : ${arrayList}">
+                    <td th:text="${item.menu_name}"></td>
+                    <td th:text="${item.menu_price}"></td>
+                    <td th:text="${item.menu_description}"></td>
+                </tr>
+            </table>
+
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Sale badge-->
