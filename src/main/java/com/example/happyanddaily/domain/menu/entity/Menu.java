@@ -1,4 +1,4 @@
-package com.example.happyanddaily.domain;
+package com.example.happyanddaily.domain.menu.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -16,7 +16,7 @@ public class Menu {
 
     @Id
     @Column(length=10)
-    public int menu_id;
+    public long menu_id;
 
     @Column(length=100)
     public String category_main;

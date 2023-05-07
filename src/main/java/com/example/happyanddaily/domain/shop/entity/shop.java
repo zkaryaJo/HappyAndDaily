@@ -1,4 +1,4 @@
-package com.example.happyanddaily.domain;
+package com.example.happyanddaily.domain.shop.entity;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +14,7 @@ public class shop {
 
     @Id
     @Column(length = 10)
-    public int shop_id;
+    public long shop_id;
 
     @Column(length = 100)
     public String shop_name;
