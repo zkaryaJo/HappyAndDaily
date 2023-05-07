@@ -1,19 +1,19 @@
-package com.example.controller;
+package com.example.happyanddaily.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
-public class HomeController {
+public class BaseController {
 
     @GetMapping("/")
-    public String home(){
+    public String base(){
         return "base";
     }
 
-    @GetMapping("/footer")
-    public String base(){
-        return "footer";
+    @GetMapping("/base")
+    public String base2(){
+        return "base";
     }
 
 }
