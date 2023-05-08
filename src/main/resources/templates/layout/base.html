@@ -3,22 +3,22 @@
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-  <th:block th:replace="fragment/head ::headFragment"></th:block>
+  <th:block th:replace="fragments/head ::headFragment"></th:block>
 </head>
   <body>
     <!-- 네비게이션바 -->
-    <div include-html="navigationBar.html"></div>
+    <th:block th:replace="fragments/navigationBar ::navigationBarFragment"></th:block>
 
     <!-- Header-->
-    <div include-html="header.html"></div>
+    <th:block th:replace="fragments/header ::headerFragment"></th:block>
 
     <!-- Content -->
-    <div include-html="/contents/base-section.html"></div>
+    <th:block th:replace="contents/base-section ::contentFragment"></th:block>
 
     <!-- Footer-->
-    <div include-html="footer.html"></div>
+    <th:block th:replace="fragments/footer ::footerFragment"></th:block>
 
     <!-- config fragment 사용 -->
-    <th:block th:replace="fragment/config :: configFragment"></th:block>
+    <th:block th:replace="fragments/config :: configFragment"></th:block>
   </body>
 </html>

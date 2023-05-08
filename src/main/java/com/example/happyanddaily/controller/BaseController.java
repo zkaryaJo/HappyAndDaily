@@ -16,7 +16,6 @@ public class BaseController {
     @GetMapping("/")
     public String base(Model model){
 
-//        ModelAndView modelAndView = new ModelAndView();
         Menu menu1 = new Menu();
         menu1.setMenu_name("컵과일, 과일컵 이 일대에서는 이집이 최고 입니다.(12온즈)");
         menu1.setMenu_price(new BigDecimal(4900));
@@ -42,10 +41,17 @@ public class BaseController {
         arrayList.add(menu1);
         arrayList.add(menu2);
         arrayList.add(menu3);
+//        arrayList.add(menu1);
+//        arrayList.add(menu2);
+//        arrayList.add(menu3);
+//        arrayList.add(menu1);
+//        arrayList.add(menu2);
+//        arrayList.add(menu3);
+//        arrayList.add(menu1);
+//        arrayList.add(menu2);
+//        arrayList.add(menu3);
         model.addAttribute("arrayList", arrayList);
 
-//        modelAndView.addObject(arrayList);
-//        modelAndView.setViewName("/layout/base");
         return "/layout/base";
     }
 
