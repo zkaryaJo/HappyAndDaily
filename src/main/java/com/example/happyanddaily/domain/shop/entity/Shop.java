@@ -10,7 +10,7 @@ import javax.persistence.Id;
 @Entity
 @Getter
 @Setter
-public class shop {
+public class Shop {
 
     @Id
     @Column(length = 10)
@@ -28,4 +28,6 @@ public class shop {
     public String shop_thumb_path;
     @Column(length = 100)
     public String shop_business_number;
+    @Column(length=1000)
+    public String shop_description;
 }

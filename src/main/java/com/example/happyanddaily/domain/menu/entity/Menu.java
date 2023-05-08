@@ -32,4 +32,13 @@ public class Menu {
 
     @Column(columnDefinition = "TEXT")
     public String menu_description;
+
+    @Column(length=100)
+    public String img_path;
+
+    @Column(length = 1)
+    public int stars;
+
+    @Column
+    public boolean saleYn;
 }
