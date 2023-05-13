@@ -37,3 +37,7 @@ spring:
   mvc:
     view:
       suffix: .html
+
+logging:
+  level:
+    root: INFO
