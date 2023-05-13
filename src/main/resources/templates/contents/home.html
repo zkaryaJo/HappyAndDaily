@@ -15,18 +15,18 @@
                         <!-- Sale badge-->
                         <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem" th:if="${item.saleYn}">Sale</div>
                         <!-- Product image-->
-                        <img class="card-img-top" th:src="${item.img_path}" alt="..." />
+                        <img class="card-img-top" th:src="${item.imgPath}" alt="..." />
                         <!-- Product details-->
                         <div class="card-body p-4">
                             <div class="text-center">
-                                <h5 class="fw-bolder" th:text="${item.menu_name}"></h5>
+                                <h5 class="fw-bolder" th:text="${item.menuName}"></h5>
                                 <!-- Product reviews-->
                                 <div class="d-flex justify-content-center small text-warning mb-2">
                                     <th:block th:each="num : ${#numbers.sequence(1, item.stars)}"> <!--별은 제품의 별의 갯수만큼!-->
                                         <div class="bi-star-fill"></div>
                                     </th:block>
                                 </div>
-                                <p th:text="|${#numbers.formatInteger(item.menu_price,3,'COMMA')} 원|"></p>
+                                <p th:text="|${#numbers.formatInteger(item.menuPrice,3,'COMMA')} 원|"></p>
                             </div>
                         </div>
 

@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import javax.swing.text.html.Option;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
 
 @Service
@@ -22,7 +23,7 @@ public class ShopService {
     }
 
     public Shop findById(long id) throws Exception {
-        return shopRepository.findById(id).orElseThrow(()->new Exception());
+        return shopRepository.findById(id).orElseThrow(()-> new NoSuchElementException());
 
     }
 }

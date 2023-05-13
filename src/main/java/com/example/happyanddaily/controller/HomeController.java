@@ -37,17 +37,10 @@ public class HomeController {
             log.info(""+e);
         }
 
-
-
-        /*arrayList.add(menu1);
-        arrayList.add(menu2);
-        arrayList.add(menu3);*/
-
         model.addAttribute("arrayList", arrayList);
         model.addAttribute("shop", shop);
 
         return "contents/home";
-        //return "/layout/base";
     }
 
     @GetMapping("/login")

@@ -15,29 +15,29 @@ public class Menu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length=10)
-    public long menu_id;
+    private long menuId;
 
     @Column(length=100)
-    public String category_main;
+    private String categoryMain;
 
     @Column(length=100)
-    public String category_sub;
+    private String categorySub;
 
     @Column(length=100)
-    public String menu_name;
+    private String menuName;
 
     @Column(columnDefinition = "decimal(10,0)", length=10)
-    public BigDecimal menu_price;
+    private BigDecimal menuPrice;
 
     @Column(columnDefinition = "TEXT")
-    public String menu_description;
+    private String menuDescription;
 
     @Column(length=100)
-    public String img_path;
+    private String imgPath;
 
     @Column(length = 1)
-    public int stars;
+    private int stars;
 
     @Column
-    public boolean saleYn;
+    private boolean saleYn;
 }

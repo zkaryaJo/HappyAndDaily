@@ -13,20 +13,20 @@ public class Shop {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length = 10)
-    public long shop_id;
+    private long shopId;
 
     @Column(length = 100)
-    public String shop_name;
+    private String shopName;
     @Column(length = 100)
-    public String shop_tel;
+    private String shopTel;
     @Column(length = 100)
-    public String shop_address;
+    private String shopAddress;
     @Column(length = 100)
-    public String shop_category;
+    private String shopCategory;
     @Column(length = 200)
-    public String shop_thumb_path;
+    private String shopThumbPath;
     @Column(length = 100)
-    public String shop_business_number;
+    private String shopBusinessNumber;
     @Column(length=1000)
-    public String shop_description;
+    private String shopDescription;
 }
