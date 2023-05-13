@@ -44,7 +44,8 @@ public class HomeController {
     }
 
     @GetMapping("/login")
-    public String login() {
+    public String login(Model model) {
+        model.addAttribute("REST_API_KEY", "b774a11d0f7cc39ac37d9966a5cd2061");
         return "login";
     }
 }
