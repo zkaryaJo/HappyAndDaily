@@ -50,4 +50,8 @@ public class HomeController {
         //return "/layout/base";
     }
 
+    @GetMapping("/login")
+    public String login() {
+        return "login";
+    }
 }

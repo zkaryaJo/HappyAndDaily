@@ -3,9 +3,7 @@ package com.example.happyanddaily.domain.menu.entity;
 import lombok.Getter;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
@@ -15,6 +13,7 @@ import java.text.DecimalFormat;
 public class Menu {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(length=10)
     public long menu_id;
 
