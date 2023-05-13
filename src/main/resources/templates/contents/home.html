@@ -1,8 +1,10 @@
+<!DOCTYPE html>
 <html lagn="ko"
       xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<!--headFragment 선언-->
-<th:block th:fragment="contentFragment">
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/base}">
+
+<th:block layout:fragment="content">
 
     <!-- Section-->
     <section class="py-5">
@@ -223,4 +225,5 @@
         </div>
     </section>
 </th:block>
+
 </html>

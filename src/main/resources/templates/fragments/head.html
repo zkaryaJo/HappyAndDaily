@@ -1,6 +1,5 @@
 <html lagn="ko"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:th="http://www.thymeleaf.org">
 
     <!--headFragment 선언-->
     <th:block th:fragment="headFragment">
@@ -13,5 +12,11 @@
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap icons-->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+        <!-- 이 영역에 공통으로 사용할 css, js library를 선언한다. -->
+        <link rel="stylesheet" th:href="@{/css/styles.css}" >
+        <script th:src="@{/js/common.js}"></script>
+        <!-- Bootstrap core JS-->
+        <script th:src="@{/js/bootstrap.bundle.js}"></script>
     </th:block>
 </html>

@@ -5,17 +5,18 @@ import com.example.happyanddaily.domain.shop.entity.Shop;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 @Controller
-public class BaseController {
+@RequestMapping("/")
+public class HomeController {
 
-    @GetMapping("/")
-    public String base(Model model){
+    @GetMapping
+    public String home(Model model){
 
         Menu menu1 = new Menu();
         menu1.setMenu_name("컵과일, 과일컵 이 일대에서는 이집이 최고 입니다.(12온즈)");
@@ -64,12 +65,8 @@ public class BaseController {
         shop.setShop_description("행복과일상이라는 상호명은 '행복과 일상' '행복 과일상' 이라는 2가지 의미와 마지막에 '상'은 상차림이라는 표현을 할때의 '상'의 의미를 가지고 왔습니다. 생과일, 생과일 주스 등 과일로 하는 식음료 판매 및 벤앤제리스 아이스크림 취급점 입니다. 과일은 가락도매시장 및 강서도매시장에서 제철에 맞는 과일을 구입하고 있으며, 다른 여러 종류의 과일을 구입하여 판매 할 수 있지만 손님의 별도 요청사항이 있지 않는 한 제철에 맞지 않는 과일은 판매를 지양하려고 합니다. 또 신선도의 문제등으로 가능하면 한번 구입할 때 무리해서 구입하지 않고 필요한 것들만 구입하여 손님들께 최대한 신선한 과일을 제공하고자 노력하고 있습니다. 이 구역에서는 과일 및 아이스크림은 행복과일상이 최고 입니다!!");
         model.addAttribute("shop", shop);
 
-        return "/layout/base";
-    }
-
-    @GetMapping("/base")
-    public String base2(){
-        return "/layout/base";
+        return "contents/home";
+        //return "/layout/base";
     }
 
 }

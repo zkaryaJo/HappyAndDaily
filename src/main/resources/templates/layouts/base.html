@@ -13,12 +13,12 @@
     <th:block th:replace="fragments/header ::headerFragment"></th:block>
 
     <!-- Content -->
-    <th:block th:replace="contents/base-section ::contentFragment"></th:block>
+    <th:block layout:fragment="content"></th:block>
 
     <!-- Footer-->
     <th:block th:replace="fragments/footer ::footerFragment"></th:block>
 
     <!-- config fragment 사용 -->
-    <th:block th:replace="fragments/config :: configFragment"></th:block>
+    <!--<th:block th:replace="fragments/config :: configFragment"></th:block>-->
   </body>
 </html>

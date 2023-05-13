@@ -24,13 +24,13 @@ dependencies {
     //mariadb-connector
     implementation"org.mariadb.jdbc:mariadb-java-client:2.1.2"
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
-    //h2
-    //implementation 'com.h2database:h2'
-    runtimeOnly 'com.h2database:h2'
+
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
-    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.1.0'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    runtimeOnly 'com.h2database:h2'
     compileOnly 'org.projectlombok:lombok'
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
     annotationProcessor 'org.projectlombok:lombok'
