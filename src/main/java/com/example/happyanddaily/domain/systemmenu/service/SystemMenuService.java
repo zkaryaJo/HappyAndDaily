@@ -7,7 +7,9 @@ import com.example.happyanddaily.domain.systemmenu.repository.SystemMenuReposito
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Map;
 import java.util.NoSuchElementException;
+import java.util.stream.Collectors;
 
 @Service
 public class SystemMenuService {
@@ -24,6 +26,11 @@ public class SystemMenuService {
 
     public SystemMenu findById(long id) throws Exception {
         return systemMenuRepository.findById(id).orElseThrow(()-> new NoSuchElementException());
-
     }
+
+    public Map<String, List<SystemMenu>> findAllToMap(){
+        return systemMenuRepository.findAll()
+                .stream().collect(Collectors.groupingBy(SystemMenu::getDepth1));
+    }
+
 }

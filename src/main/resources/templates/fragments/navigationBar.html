@@ -12,26 +12,24 @@
           <!--depth 1-->
           <!--<li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">홈</a></li>-->
 
-          <li class="nav-item"><a class="nav-link" href="about">소개</a></li>
+          <span th:each="item : ${systemMenuMap}">
+            <!--depth 1-->
+            <li class="nav-item" th:if="${item.value.size == 1}">
+              <a class="nav-link" th:href="${item.value.get(0).url}" th:text="${item.value.get(0).systemMenuName}">뎁스1메뉴</a>
+            </li>
 
-          <!--depth 2-->
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">메뉴</a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#!">모든 항목</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#!">대표메뉴</a></li>
-              <li><a class="dropdown-item" href="#!">컵과일, 과일 도시락</a></li>
-              <li><a class="dropdown-item" href="#!">과일 단품</a></li>
-              <li><a class="dropdown-item" href="#!">와플</a></li>
-              <li><a class="dropdown-item" href="#!">과일만 드시기 심심하시죠</a></li>
-              <li><a class="dropdown-item" href="#!">행복과일상 Cafe (커피 & 차)</a></li>
-              <li><a class="dropdown-item" href="#!">생 과일 주스</a></li>
-              <li><a class="dropdown-item" href="#!">떡볶이</a></li>
-              <li><a class="dropdown-item" href="#!">대용량 1L 음료</a></li>
-              <li><a class="dropdown-item" href="#!">요거트 아이스크림</a></li>
-            </ul>
-          </li>
+            <!--depth 2-->
+            <li class="nav-item dropdown" th:if="${item.value.size > 1}">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" th:href="${item.value.get(0).url}" role="button" data-bs-toggle="dropdown" aria-expanded="false">메뉴</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#!">모든 항목</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <span th:each="item2 : ${item.value}">
+                  <li><a class="dropdown-item" th:href="${item2.url}" th:text="${item2.systemMenuName}">대표메뉴</a></li>
+                </span>
+              </ul>
+            </li>
+          </span>
 
         </ul>
         <form class="d-flex">

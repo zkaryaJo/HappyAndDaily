@@ -1,4 +1,4 @@
-package com.example.happyanddaily.domain.menu.controller;
+package com.example.happyanddaily.domain.shop.controller;
 
 import com.example.happyanddaily.domain.menu.entity.Menu;
 import com.example.happyanddaily.domain.menu.service.MenuService;
@@ -18,20 +18,19 @@ import java.util.Map;
 
 @Slf4j
 @Controller
-@RequestMapping("/menu")
-public class MenuController {
+@RequestMapping("/shop")
+public class ShopController {
     private final MenuService menuService;
     private final ShopService shopService;
     private final SystemMenuService systemMenuService;
-    public MenuController(MenuService menuService, ShopService shopService, SystemMenuService systemMenuService) {
+    public ShopController(MenuService menuService, ShopService shopService, SystemMenuService systemMenuService) {
         this.menuService = menuService;
         this.shopService = shopService;
         this.systemMenuService = systemMenuService;
     }
 
     @GetMapping("{subPage}")
-    public String viewMenu(Model model, @PathVariable("subPage") String subPage){
-
+    public String viewShop(Model model, @PathVariable("subPage") String subPage){
 
         List<Menu> menuList = null;
         Shop shop = null;
