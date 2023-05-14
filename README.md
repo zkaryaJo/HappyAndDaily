@@ -1,5 +1,5 @@
 # HappyAndDaily
-
+[![Java CI with Gradle](https://github.com/zkaryaJo/HappyAndDaily/actions/workflows/gradle.yml/badge.svg)](https://github.com/zkaryaJo/HappyAndDaily/actions/workflows/gradle.yml)
 ### Components
 
 0. JDK : JAVA 8 (1.8.0.232)
