@@ -1,7 +1,7 @@
-package com.example.happyanddaily.domain.home;
+package com.example.happyanddaily.domain.admin.controller;
 
-import com.example.happyanddaily.domain.menu.entity.Menu;
-import com.example.happyanddaily.domain.menu.service.MenuService;
+import com.example.happyanddaily.domain.admin.entity.Admin;
+import com.example.happyanddaily.domain.admin.service.AdminService;
 import com.example.happyanddaily.domain.shop.entity.Shop;
 import com.example.happyanddaily.domain.shop.service.ShopService;
 import com.example.happyanddaily.domain.systemmenu.entity.SystemMenu;
@@ -10,6 +10,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -17,28 +18,26 @@ import java.util.Map;
 
 @Slf4j
 @Controller
-@RequestMapping("/")
-public class HomeController {
-
-    private final MenuService menuService;
+@RequestMapping("/admin")
+public class AdminController {
+    private final AdminService adminService;
     private final ShopService shopService;
     private final SystemMenuService systemMenuService;
-
-    public HomeController(MenuService menuService, ShopService shopService, SystemMenuService systemMenuService) {
-        super();
-        this.menuService = menuService;
+    public AdminController(AdminService adminService, ShopService shopService, SystemMenuService systemMenuService) {
+        this.adminService = adminService;
         this.shopService = shopService;
         this.systemMenuService = systemMenuService;
     }
 
-    @GetMapping
-    public String viewHome(Model model) {
+    @GetMapping("{subPage}")
+    public String viewAdmin(Model model, @PathVariable("subPage") String subPage){
 
-        List<Menu> menuList = null;
+
+        List<Admin> menuList = null;
         Shop shop = null;
         Map<String, List<SystemMenu>> systemMenuMap = null;
         try {
-            menuList = menuService.findAll();
+            menuList = adminService.findAll();
             shop = shopService.findById(1);
             systemMenuMap = systemMenuService.findAllToMap();
 
@@ -50,7 +49,7 @@ public class HomeController {
         model.addAttribute("shop", shop);
         model.addAttribute("systemMenuMap", systemMenuMap);
 
-        return "contents/home";
+        return "contents/admin/"+subPage;
     }
 
 }

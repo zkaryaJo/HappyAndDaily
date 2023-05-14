@@ -56,6 +56,14 @@ public class HappyAndDailyApplication {
                     list.add(depth2Menu);
                 }
 
+                // 2Depth (주문메뉴)
+                for(int i=0; i<5; i++){
+                    SystemMenu depth2Menu = new SystemMenu();
+                    depth2Menu.setDepth1("05");
+                    depth2Menu.setDepth2(String.format("%02d", i));
+                    list.add(depth2Menu);
+                }
+
                 list.forEach(item ->{
                     switch (item.getDepth1()){
                         case "00": item.setSystemMenuName("홈"); item.setUrl("/"); break;
@@ -76,6 +84,16 @@ public class HappyAndDailyApplication {
                             break;
                         case "03": item.setDepth1("80"); item.setSystemMenuName("장바구니");item.setUrl("/cart"); break;
                         case "04": item.setDepth1("90"); item.setSystemMenuName("로그인");item.setUrl("/login"); break;
+                        case "05":
+                            item.setDepth1("50");
+                            switch (item.getDepth2()) {
+                                case "00": item.setSystemMenuName("관리자-주문현황"); item.setUrl("/admin/01"); break;
+                                case "01": item.setSystemMenuName("관리자-결제현황"); item.setUrl("/admin/02"); break;
+                                case "02": item.setSystemMenuName("관리자-재고현황"); item.setUrl("/admin/03"); break;
+                                case "03": item.setSystemMenuName("관리자-기본정보관리"); item.setUrl("/admin/04"); break;
+                                case "04": item.setSystemMenuName("관리자-메뉴관리"); item.setUrl("/admin/05"); break;
+                            };
+                            break;
                         default: item.setUrl("/"); break;
                     };
                 });

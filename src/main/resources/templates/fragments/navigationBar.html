@@ -18,8 +18,8 @@
               <a class="nav-link" th:href="${item.value.get(0).url}" th:text="${item.value.get(0).systemMenuName}">뎁스1메뉴</a>
             </li>
 
-            <!--depth 2-->
-            <li class="nav-item dropdown" th:if="${item.value.size > 1}">
+            <!--사용자메뉴 -> depth 2-->
+            <li class="nav-item dropdown" th:if="${item.value.size > 1} and ${item.value.get(0).depth1 == '02'}">
               <a class="nav-link dropdown-toggle" id="navbarDropdown" th:href="${item.value.get(0).url}" role="button" data-bs-toggle="dropdown" aria-expanded="false">메뉴</a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="#!">모든 항목</a></li>
@@ -29,6 +29,17 @@
                 </span>
               </ul>
             </li>
+
+            <!--사업자메뉴 -> depth 2-->
+            <li class="nav-item dropdown" th:if="${item.value.size > 1 and item.value.get(0).depth1 == '50' }" >
+              <a class="nav-link dropdown-toggle" id="navbarDropdownAdmin" th:href="${item.value.get(0).url}" role="button" data-bs-toggle="dropdown" aria-expanded="false">점포관리</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdownAdmin">
+                <span th:each="item2 : ${item.value}">
+                  <li><a class="dropdown-item" th:href="${item2.url}" th:text="${item2.systemMenuName}">관리자메뉴</a></li>
+                </span>
+              </ul>
+            </li>
+
           </span>
 
         </ul>
