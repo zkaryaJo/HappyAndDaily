@@ -18,6 +18,8 @@ public class User {
     private String loginId;
     private String nickname;
     private String email;
+    private String gender;
+    private String birthday;
     private String provider;
     private String providerId;
     private String role;

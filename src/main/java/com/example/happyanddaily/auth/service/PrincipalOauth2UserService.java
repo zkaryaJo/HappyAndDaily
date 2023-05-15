@@ -23,7 +23,6 @@ import java.util.Optional;
 // 첫 로그인시 회원가입
 public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
     private final UserRepository userRepository;
-//    private final BCryptPasswordEncoder encoder;
 
     // OAuth2UserRequest, OAuth2User로 user 정보 추출후 회원가입 진행
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
@@ -46,6 +45,8 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
         String email = oAuth2UserInfo.getEmail();
         String loginId = provider + "_" + providerId;
         String nickname = oAuth2UserInfo.getName();
+        String birthday = oAuth2UserInfo.getBirth();
+        String gender = oAuth2UserInfo.getGender();
 
         Optional<User> optionalUser = userRepository.findByLoginId(loginId);
 
@@ -62,6 +63,8 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
                     .providerId(providerId)
                     .role(User.UserRole.USER.getValue())
                     .email(email)
+                    .birthday(birthday)
+                    .gender(gender)
                     .build();
             userRepository.save(user);
         }else {
