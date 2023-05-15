@@ -83,7 +83,7 @@ public class HappyAndDailyApplication {
                             };
                             break;
                         case "03": item.setDepth1("80"); item.setSystemMenuName("장바구니");item.setUrl("/cart"); break;
-                        case "04": item.setDepth1("90"); item.setSystemMenuName("로그인");item.setUrl("/login"); break;
+                        case "04": item.setDepth1("90"); item.setSystemMenuName("로그인");item.setUrl("/oauth2/authorization/kakao"); break;
                         case "05":
                             item.setDepth1("50");
                             switch (item.getDepth2()) {

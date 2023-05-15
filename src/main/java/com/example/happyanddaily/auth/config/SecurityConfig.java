@@ -31,13 +31,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin().disable()
                 .oauth2Login()
-                .loginPage("/login")
+                .loginPage("/login/oauth2/kakao")
                 .defaultSuccessUrl("/")
+                .redirectionEndpoint()
+                .baseUri("/login/oauth2/code/*")
+                .and()
                 .userInfoEndpoint()
                 .userService(principalOauth2UserService);
-//        http
-//                .exceptionHandling()
-//                .authenticationEntryPoint(new MyAuthenticationEntryPoint())
-//                .accessDeniedHandler(new MyAccessDeniedHandler());
+        http
+                .exceptionHandling()
+                .authenticationEntryPoint(new MyAuthenticationEntryPoint())
+                .accessDeniedHandler(new MyAccessDeniedHandler());
     }
 }
