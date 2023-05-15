@@ -41,7 +41,7 @@ spring:
       client:
         registration:
           kakao:
-            client-id: ${rest_api_key}
+            client-id: b774a11d0f7cc39ac37d9966a5cd2061
             scope:
               - account_email
               - profile_nickname
@@ -53,8 +53,8 @@ spring:
             client-name: kakao
             client-authentication-method: POST
           naver:
-            client-id: ${rest_api_key_naver}
-            client-secret: ${secret_key_naver}
+            client-id: MxPM4eOxK732J3CkgZdF
+            client-secret: stsSFHxiSI
             scope:
               - name
               - email
