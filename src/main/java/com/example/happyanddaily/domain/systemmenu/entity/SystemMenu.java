@@ -31,6 +31,8 @@ public class SystemMenu {
     @Column(length=100)
     private String systemMenuName;
 
+    private String imageUrl;
+
     @Column(length=100)
     private String url;
 }

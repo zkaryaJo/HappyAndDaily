@@ -40,8 +40,8 @@ public class HappyAndDailyApplication {
             private void createSystemMenu() {
                 List<SystemMenu> list = new ArrayList<>();
 
-                // 1Depth(0 ~ 4)
-                for(int i=0; i<5; i++){
+                // 1Depth(0 ~ 5)
+                for(int i=0; i<6; i++){
                     SystemMenu depth1Menu = new SystemMenu();
                     if(i==2) continue;
                     depth1Menu.setDepth1(String.format("%02d", i));
@@ -59,7 +59,7 @@ public class HappyAndDailyApplication {
                 // 2Depth (주문메뉴)
                 for(int i=0; i<5; i++){
                     SystemMenu depth2Menu = new SystemMenu();
-                    depth2Menu.setDepth1("05");
+                    depth2Menu.setDepth1("06");
                     depth2Menu.setDepth2(String.format("%02d", i));
                     list.add(depth2Menu);
                 }
@@ -83,8 +83,9 @@ public class HappyAndDailyApplication {
                             };
                             break;
                         case "03": item.setDepth1("80"); item.setSystemMenuName("장바구니");item.setUrl("/cart"); break;
-                        case "04": item.setDepth1("90"); item.setSystemMenuName("로그인");item.setUrl("/oauth2/authorization/kakao"); break;
-                        case "05":
+                        case "04": item.setDepth1("90"); item.setSystemMenuName("카카오 로그인");item.setUrl("/oauth2/authorization/kakao"); break;
+                        case "05": item.setDepth1("100"); item.setSystemMenuName("네이버 로그인"); item.setUrl("/oauth2/authorization/naver"); break;
+                        case "06":
                             item.setDepth1("50");
                             switch (item.getDepth2()) {
                                 case "00": item.setSystemMenuName("관리자-주문현황"); item.setUrl("/admin/01"); break;
