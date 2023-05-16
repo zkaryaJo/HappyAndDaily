@@ -3,51 +3,52 @@
 <!--headerFragment 선언-->
 <th:block th:fragment="navigationBarFragment">
   <!-- Navigation-->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container px-4 px-lg-5">
-      <a class="navbar-brand" href="/" th:text="${shop.shopName}">상호명</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light header_nav">
+    <div class="container px-4 px-lg-5 header_nav_wrapper">
+      <a class="navbar-brand logo" href="/" th:text="${shop.shopName}">상호명</a>
+      <button class="navbar-toggler header_nav_toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon header_nav_toggle_icon"></span>
+      </button>
+      <div class="collapse navbar-collapse header_nav_bar" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4 header_nav_list">
           <!--depth 1-->
           <!--<li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">홈</a></li>-->
 
           <span th:each="item : ${systemMenuMap}">
             <!--depth 1-->
-            <li class="nav-item" th:if="${item.value.size == 1}">
-              <a class="nav-link" th:href="${item.value.get(0).url}" th:text="${item.value.get(0).systemMenuName}">뎁스1메뉴</a>
+            <li class="nav-item header_nav_list" th:if="${item.value.size == 1}">
+              <a class="nav-link header_nav_link" th:href="${item.value.get(0).url}" th:text="${item.value.get(0).systemMenuName}">뎁스1메뉴</a>
             </li>
 
             <!--사용자메뉴 -> depth 2-->
-            <li class="nav-item dropdown" th:if="${item.value.size > 1} and ${item.value.get(0).depth1 == '02'}">
-              <a class="nav-link dropdown-toggle" id="navbarDropdown" th:href="${item.value.get(0).url}" role="button" data-bs-toggle="dropdown" aria-expanded="false">메뉴</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#!">모든 항목</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <span th:each="item2 : ${item.value}">
-                  <li><a class="dropdown-item" th:href="${item2.url}" th:text="${item2.systemMenuName}">대표메뉴</a></li>
-                </span>
+            <li class="nav-item header_nav_list position_relative nav_dropdown dropdown" th:if="${item.value.size > 1} and ${item.value.get(0).depth1 == '02'}">
+              <a class="nav-link dropdown-toggle header_nav_link" id="navbarDropdown" th:href="${item.value.get(0).url}" role="button" data-bs-toggle="dropdown" aria-expanded="false">메뉴</a>
+              <ul class="dropdown-menu header_nav_dropdown_list position_absolute hide" aria-labelledby="navbarDropdown">
+                  <li th:each="item2 : ${item.value}">
+                    <a class="dropdown-item header_nav_dropdown_item" th:href="${item2.url}" th:text="${item2.systemMenuName}">대표메뉴</a>
+                  </li>
               </ul>
             </li>
 
             <!--사업자메뉴 -> depth 2-->
-            <li class="nav-item dropdown" th:if="${item.value.size > 1 and item.value.get(0).depth1 == '50' }" >
-              <a class="nav-link dropdown-toggle" id="navbarDropdownAdmin" th:href="${item.value.get(0).url}" role="button" data-bs-toggle="dropdown" aria-expanded="false">점포관리</a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownAdmin">
-                <span th:each="item2 : ${item.value}">
-                  <li><a class="dropdown-item" th:href="${item2.url}" th:text="${item2.systemMenuName}">관리자메뉴</a></li>
-                </span>
+            <li class="nav-item header_nav_list position_relative nav_dropdown dropdown" th:if="${item.value.size > 1 and item.value.get(0).depth1 == '50' }" >
+              <a class="nav-link dropdown-toggle header_nav_link" id="navbarDropdownAdmin" th:href="${item.value.get(0).url}" role="button" data-bs-toggle="dropdown" aria-expanded="false">점포관리</a>
+              <ul class="dropdown-menu header_nav_dropdown_list position_absolute hide" aria-labelledby="navbarDropdownAdmin">
+                  <li th:each="item2 : ${item.value}">
+                    <a class="dropdown-item header_nav_dropdown_item" th:href="${item2.url}" th:text="${item2.systemMenuName}">관리자메뉴</a>
+                  </li>
               </ul>
             </li>
 
           </span>
 
         </ul>
-        <form class="d-flex">
-          <button class="btn btn-outline-dark" type="submit">
+        <form class="d-flex header_nav_cart">
+          <button class="btn btn-outline-dark header_nav_cart_button" type="submit">
+            <span class="header_nav_cart_icon"></span>
             <i class="bi-cart-fill me-1"></i>
-            Cart
-            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
+            <p class="header_nav_cart_text">Cart</p>
+            <span class="badge bg-dark text-white ms-1 rounded-pill header_nav_cart_count position_relative">0</span>
           </button>
         </form>
       </div>

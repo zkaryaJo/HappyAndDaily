@@ -40,4 +40,7 @@ public class Menu {
 
     @Column
     private boolean saleYn;
+
+    @Column
+    private String badge;
 }

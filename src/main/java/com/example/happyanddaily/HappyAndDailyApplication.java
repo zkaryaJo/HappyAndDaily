@@ -115,6 +115,7 @@ public class HappyAndDailyApplication {
                 menu1.setImgPath("/images/menu/01/01_cup_fruit.jpeg");
                 menu1.setStars(2);
                 menu1.setSaleYn(true);
+                menu1.setBadge("HOT");
                 list.add(menu1);
 
                 Menu menu2 = new Menu();
@@ -138,6 +139,28 @@ public class HappyAndDailyApplication {
                 menu3.setStars(5);
                 menu3.setSaleYn(true);
                 list.add(menu3);
+
+                Menu menu4 = new Menu();
+                menu4.setMenuName("향도 맛도 좋은 딸기(죽향250g이상(소))");
+                menu4.setMenuPrice(new BigDecimal(11000));
+                menu4.setCategoryMain("대표메뉴");
+                menu4.setCategorySub("");
+                menu4.setMenuDescription("딸기가 끝물이라서 괜찮은 딸기를 하도 구하기 어려워 거의 최고가인 죽향 딸기만 매입해 왔습니다. 같은 딸기라도 품종에 따라 시장 가면 가격 차이가 꽤 있습니다. 참고해주세요.");
+                menu4.setImgPath("");
+                menu4.setStars(5);
+                menu4.setSaleYn(true);
+                list.add(menu4);
+
+                Menu menu5 = new Menu();
+                menu5.setMenuName("향도 맛도 좋은 딸기(죽향250g이상(소))");
+                menu5.setMenuPrice(new BigDecimal(11000));
+                menu5.setCategoryMain("대표메뉴");
+                menu5.setCategorySub("");
+                menu5.setMenuDescription("딸기가 끝물이라서 괜찮은 딸기를 하도 구하기 어려워 거의 최고가인 죽향 딸기만 매입해 왔습니다. 같은 딸기라도 품종에 따라 시장 가면 가격 차이가 꽤 있습니다. 참고해주세요.");
+                menu5.setImgPath("");
+                menu5.setStars(5);
+                menu5.setSaleYn(true);
+                list.add(menu5);
 
                 menuRepository.saveAll(list);
 

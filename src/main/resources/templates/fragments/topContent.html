@@ -1,0 +1,14 @@
+<html lagn="ko"
+      xmlns:th="http://www.thymeleaf.org">
+<!--topContentFragment 선언-->
+<div th:fragment="topContentFragment">
+    <header class="bg-dark py-5 topContent">
+        <div class="container px-4 px-lg-5 my-5 topContent_wrapper">
+            <h1 class="display-4 fw-bolder topContent_title">행복과일상</h1>
+            <!--<img src="images/shop/shop.jpeg">-->
+            <p class="lead fw-normal text-white-50 mb-0 topContent_content" th:text="${shop.shopDescription}">가게 설명은 여기에</p>
+        </div>
+    </header>
+</div>
+</html>
+
