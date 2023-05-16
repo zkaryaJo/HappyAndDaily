@@ -19,7 +19,8 @@
                     <a href="#" class="card h-100 content_item_wrapper position_relative">
                         <!-- Sale badge-->
                         <div class="badge bg-dark text-white content_item_badge_wrapper position_absolute" th:if="${!#strings.isEmpty(item.badge)}">
-                            <p th:classappend="|content_item_badge content_item_badge--${item.badge}|">[(${item.badge})]</p>
+                            <p th:each="badge : ${#strings.listSplit(item.badge,',')}"
+                                    th:classappend="|content_item_badge content_item_badge--${badge}|">[(${badge})]</p>
                         </div>
                         <!-- Product image-->
                         <!--img != null-->

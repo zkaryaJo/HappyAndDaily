@@ -114,8 +114,7 @@ public class HappyAndDailyApplication {
                 menu1.setMenuDescription("아래 준비된 과일 중 6~7가지 정도로 배달됩니다. 컵과일은 시간이 많이 소요 됩니다. 품절로 되어 있거나 가게가 임시중지라도 컵과일 주문은 가게로 연락 부탁 드립니다. 010칠육일오7953 1.사과 2.단감 3.배 4.스테비아방울토마토or방울토마토 5.크림슨적포도or청포도 6.오렌지 7.그린키위 8.골드키위 9.감귤 10.파인애플 11.만감류(한라봉,레드향,천혜향,황금향) 12.딸기 13.용과 14.바나나 15.블루베리");
                 menu1.setImgPath("/images/menu/01/01_cup_fruit.jpeg");
                 menu1.setStars(2);
-                menu1.setSaleYn(true);
-                menu1.setBadge("HOT");
+                menu1.setBadge("HOT,SALE,BEST");
                 list.add(menu1);
 
                 Menu menu2 = new Menu();
@@ -126,7 +125,7 @@ public class HappyAndDailyApplication {
                 menu2.setMenuDescription("다른 가게와 가격 비교해보세요. 이번에 구매한 애플망고는 상당히 괜찮습니다. 피부미용과 눈 건강에 도움이 된다고 합니다. 약 450~500g 정도 되는 페루산 애플망고 입니다. 비교적 큰 편입니다.10% 미만의 에어포켓은 그대로 배달 됩니다. 생과일 그대로 구매하는 것도 고려해 보세요.");
                 menu2.setImgPath("/images/menu/01/02_apple_mango.jpeg");
                 menu2.setStars(4);
-                menu2.setSaleYn(false);
+                menu2.setBadge("HOT,BEST");
                 list.add(menu2);
 
                 Menu menu3 = new Menu();
@@ -137,7 +136,7 @@ public class HappyAndDailyApplication {
                 menu3.setMenuDescription("딸기가 끝물이라서 괜찮은 딸기를 하도 구하기 어려워 거의 최고가인 죽향 딸기만 매입해 왔습니다. 같은 딸기라도 품종에 따라 시장 가면 가격 차이가 꽤 있습니다. 참고해주세요.");
                 menu3.setImgPath("/images/menu/01/03_strawberry.jpeg");
                 menu3.setStars(5);
-                menu3.setSaleYn(true);
+                menu3.setBadge("BEST");
                 list.add(menu3);
 
                 Menu menu4 = new Menu();
@@ -148,7 +147,6 @@ public class HappyAndDailyApplication {
                 menu4.setMenuDescription("딸기가 끝물이라서 괜찮은 딸기를 하도 구하기 어려워 거의 최고가인 죽향 딸기만 매입해 왔습니다. 같은 딸기라도 품종에 따라 시장 가면 가격 차이가 꽤 있습니다. 참고해주세요.");
                 menu4.setImgPath("");
                 menu4.setStars(5);
-                menu4.setSaleYn(true);
                 list.add(menu4);
 
                 Menu menu5 = new Menu();
