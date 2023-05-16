@@ -157,7 +157,6 @@ public class HappyAndDailyApplication {
                 menu5.setMenuDescription("딸기가 끝물이라서 괜찮은 딸기를 하도 구하기 어려워 거의 최고가인 죽향 딸기만 매입해 왔습니다. 같은 딸기라도 품종에 따라 시장 가면 가격 차이가 꽤 있습니다. 참고해주세요.");
                 menu5.setImgPath("");
                 menu5.setStars(5);
-                menu5.setSaleYn(true);
                 list.add(menu5);
 
                 menuRepository.saveAll(list);

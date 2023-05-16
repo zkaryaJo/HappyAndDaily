@@ -39,8 +39,5 @@ public class Menu {
     private int stars;
 
     @Column
-    private boolean saleYn;
-
-    @Column
     private String badge;
 }

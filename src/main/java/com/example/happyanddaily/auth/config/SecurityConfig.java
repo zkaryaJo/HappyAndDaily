@@ -23,7 +23,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //인증
 //                .antMatchers("").authenticated()
                 //인가
-                .antMatchers("/admin/*").hasAuthority(User.UserRole.ADMIN.getValue())
+                //.antMatchers("/admin/*").hasAuthority(User.UserRole.ADMIN.getValue())
                 .anyRequest().permitAll()
                 .and()
                 .logout()

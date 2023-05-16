@@ -6,10 +6,47 @@
 
 <th:block layout:fragment="content">
 
+    <
+
+    <table id="menuTable" class="table table-secondary">
+        <thead>
+        <tr>
+            <th th:each="key: ${singleMenuMap.keySet()}" th:text="${key}"/>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="menu : ${menuList}">
+            <td th:text="${menu.menuId}"/>
+            <td th:text="${menu.categoryMain}"/>
+            <td th:text="${menu.categorySub}"/>
+            <td th:text="${menu.menuName}"/>
+            <td th:text="${menu.menuPrice}"/>
+            <td th:text="${menu.menuDescription}"/>
+            <td th:text="${menu.imgPath}"/>
+            <td th:text="${menu.stars}"/>
+            <td th:text="${menu.badge}"/>
+        </tr>
+        </tbody>
+    </table>
+
     <div>
-        소개 페이지는 다음과 같습니다!
+
     </div>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap4.min.css" />
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"/>
+    <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap4.min.js"/>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"/>
+<!--    <link rel ="stylesheet" href="/DataTables/datatables.css">-->
+<!--    <script src="/DataTables/datatables.js"/>-->
+<!--    <script src="https://code.jquery.com/jquery-3.5.1.js"/>-->
+
+    <script>
+    $(document).ready(function () {
+        $('#menuTable').DataTable();
+    });
+    </script>
 </th:block>
 
 </html>
