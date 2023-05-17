@@ -57,38 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 새로운 MutationObserver 인스턴스 생성
-    var observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
-            if (mutation.attributeName === 'style') {
-                if (getComputedStyle(toggleBtn).display === 'none') {
-                    if (!nav.classList.contains('show')) {
-                        nav.classList.add('show');
-                        console.log("제발..");
-                    }
-                } else {
-                    if (nav.classList.contains('show')) {
-                        nav.classList.remove('show');
-                        console.log("..?");
-                    }
-                }
-            }
-        });
-    });
-
-    // 관찰할 대상과 옵션 설정
-    var options = {
-        attributes: true // 속성 변경 관찰
-    };
-
-    // MutationObserver를 대상 요소에 연결하고 관찰 시작
+    // 화면의 크기에 따라 메뉴 인터렉션
     function startObserver() {
         toggleBtn = document.querySelector('.header_nav_toggle');
         if (toggleBtn) {
-            observer.observe(toggleBtn, options);
             checktoggleBtnDisplay();
-        } else {
-            setTimeout(startObserver, 100);
         }
     }
 
