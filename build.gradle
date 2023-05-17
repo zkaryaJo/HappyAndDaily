@@ -43,6 +43,7 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     //Oauth2
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+    implementation group: 'org.springframework.security', name: 'spring-security-oauth2-client', version: '5.6.3'
     //Security
     implementation 'org.springframework.boot:spring-boot-starter-security'
 
