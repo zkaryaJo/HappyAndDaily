@@ -30,11 +30,27 @@ public class NaverUserInfo implements OAuth2UserInfo{
 
     @Override
     public String getBirth() {
-        return (String) attributes.get("birthday");
+        String birth = (String) attributes.get("birthday");
+            if (birth != null && birth.contains("-")) {
+                String[] parts = birth.split("-");
+                if (parts.length >= 2) {
+                    String month = parts[0];
+                    String day = parts[1];
+                    return month + day;
+                }
+            }
+        return birth;
     }
-
     @Override
     public String getGender() {
-        return (String) attributes.get("gender");
+        String gender = (String) attributes.get("gender");
+        if(gender != null) {
+            if(gender.equalsIgnoreCase("F")) {
+                return "female";
+            } else if (gender.equalsIgnoreCase("M")){
+                return "male";
+            }
+        }
+        return gender;
     }
 }
