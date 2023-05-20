@@ -30,6 +30,6 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Build with Gradle
-      run: ./gradlew build
+      run: ./gradlew clean build -Dspring.profiles.active=local
 #    - name: send jar 
 #      run: java -jar ./build/libs/HappyAndDaily-0.0.1-SNAPSHOT.jar

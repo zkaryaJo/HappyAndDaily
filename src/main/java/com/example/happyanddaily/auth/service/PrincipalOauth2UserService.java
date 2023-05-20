@@ -27,6 +27,7 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
     // OAuth2UserRequest, OAuth2User로 user 정보 추출후 회원가입 진행
     public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
         OAuth2User oAuth2User = super.loadUser(userRequest);
+        String accessToken = userRequest.getAccessToken().getTokenValue();
         log.info("getAttributes : {}", oAuth2User.getAttributes());
         OAuth2UserInfo oAuth2UserInfo = null;
 
@@ -74,5 +75,9 @@ public class PrincipalOauth2UserService extends DefaultOAuth2UserService {
         String principalName = oAuth2User.getName();
 
         return new PrincipalDetails(user, oAuth2User.getAttributes(), principalName, User.UserRole.USER.getValue());
+    }
+
+    public String getAccessToken(OAuth2UserRequest userRequest) {
+        return userRequest.getAccessToken().getTokenValue();
     }
 }

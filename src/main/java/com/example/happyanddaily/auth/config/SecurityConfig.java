@@ -3,18 +3,21 @@ package com.example.happyanddaily.auth.config;
 import com.example.happyanddaily.auth.handler.MyAccessDeniedHandler;
 import com.example.happyanddaily.auth.handler.MyAuthenticationEntryPoint;
 import com.example.happyanddaily.auth.service.PrincipalOauth2UserService;
-import com.example.happyanddaily.domain.user.entity.User;
 import lombok.RequiredArgsConstructor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.web.SecurityFilterChain;
 
 @Configuration
+@EnableWebSecurity
 @RequiredArgsConstructor
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfig{
     private final PrincipalOauth2UserService principalOauth2UserService;
 
-    protected void configure(HttpSecurity http) throws Exception {
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
                 .headers().frameOptions().disable()
@@ -42,5 +45,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .exceptionHandling()
                 .authenticationEntryPoint(new MyAuthenticationEntryPoint())
                 .accessDeniedHandler(new MyAccessDeniedHandler());
+
+        return http.build();
     }
 }
