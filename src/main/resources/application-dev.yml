@@ -5,6 +5,9 @@ spring:
   config:
     activate:
       on-profile: dev
+  data:
+    rest:
+      base-path: /api
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
     properties:

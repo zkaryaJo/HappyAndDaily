@@ -5,6 +5,9 @@ spring:
   config:
     activate:
       on-profile: local
+  data:
+    rest:
+      base-path: /api
   h2:
     console:
       enabled: true

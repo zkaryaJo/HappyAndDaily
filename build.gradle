@@ -21,6 +21,10 @@ repositories {
 dependencies {
     // JPA
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    // spring-data-rest 추가
+    implementation 'org.springframework.boot:spring-boot-starter-data-rest'
+    // springDoc OpenAPI UI 추가
+    implementation 'org.springdoc:springdoc-openapi-ui:1.6.14'
     //mariadb-connector
     implementation"org.mariadb.jdbc:mariadb-java-client:2.1.2"
     implementation 'org.springframework.boot:spring-boot-starter-jdbc'
