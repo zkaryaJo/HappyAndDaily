@@ -44,55 +44,55 @@ public class HappyAndDailyApplication {
                 for(int i=0; i<6; i++){
                     SystemMenu depth1Menu = new SystemMenu();
                     if(i==2) continue;
-                    depth1Menu.setDepth1(String.format("%02d", i));
+                    depth1Menu.setDepth1("MENU"+String.format("%02d", i));
                     list.add(depth1Menu);
                 }
 
                 // 2Depth (주문메뉴)
                 for(int i=0; i<10; i++){
                     SystemMenu depth2Menu = new SystemMenu();
-                    depth2Menu.setDepth1("02");
-                    depth2Menu.setDepth2(String.format("%02d", i));
+                    depth2Menu.setDepth1("MENU"+"02");
+                    depth2Menu.setDepth2(depth2Menu.getDepth1()+String.format("%02d", i));
                     list.add(depth2Menu);
                 }
 
                 // 2Depth (주문메뉴)
                 for(int i=0; i<5; i++){
                     SystemMenu depth2Menu = new SystemMenu();
-                    depth2Menu.setDepth1("06");
-                    depth2Menu.setDepth2(String.format("%02d", i));
+                    depth2Menu.setDepth1("MENU"+"06");
+                    depth2Menu.setDepth2(depth2Menu.getDepth1()+String.format("%02d", i));
                     list.add(depth2Menu);
                 }
 
                 list.forEach(item ->{
                     switch (item.getDepth1()){
-                        case "00": item.setSystemMenuName("홈"); item.setUrl("/"); break;
-                        case "01": item.setSystemMenuName("소개"); item.setUrl("/about"); break;
-                        case "02":
+                        case "MENU00": item.setSystemMenuName("홈"); item.setUrl("/"); break;
+                        case "MENU01": item.setSystemMenuName("소개"); item.setUrl("/about"); break;
+                        case "MENU02":
                             switch (item.getDepth2()) {
-                                case "00": item.setSystemMenuName("대표메뉴"); item.setUrl("/menu/01"); break;
-                                case "01": item.setSystemMenuName("컵과일, 과일 도시락"); item.setUrl("/menu/02"); break;
-                                case "02": item.setSystemMenuName("과일 단품"); item.setUrl("/menu/03"); break;
-                                case "03": item.setSystemMenuName("와플"); item.setUrl("/menu/04"); break;
-                                case "04": item.setSystemMenuName("일만 드시기 심심하시죠"); item.setUrl("/menu/05"); break;
-                                case "05": item.setSystemMenuName("행복과일상 Cafe (커피 & 차)"); item.setUrl("/menu/06"); break;
-                                case "06": item.setSystemMenuName("생 과일 주스"); item.setUrl("/menu/07"); break;
-                                case "07": item.setSystemMenuName("떡볶이"); item.setUrl("/menu/08"); break;
-                                case "08": item.setSystemMenuName("대용량 1L 음료"); item.setUrl("/menu/09"); break;
-                                case "09": item.setSystemMenuName("요거트 아이스크림"); item.setUrl("/menu/10"); break;
+                                case "MENU0200": item.setSystemMenuName("대표메뉴"); item.setUrl("/menu/01"); break;
+                                case "MENU0201": item.setSystemMenuName("컵과일, 과일 도시락"); item.setUrl("/menu/02"); break;
+                                case "MENU0202": item.setSystemMenuName("과일 단품"); item.setUrl("/menu/03"); break;
+                                case "MENU0203": item.setSystemMenuName("와플"); item.setUrl("/menu/04"); break;
+                                case "MENU0204": item.setSystemMenuName("일만 드시기 심심하시죠"); item.setUrl("/menu/05"); break;
+                                case "MENU0205": item.setSystemMenuName("행복과일상 Cafe (커피 & 차)"); item.setUrl("/menu/06"); break;
+                                case "MENU0206": item.setSystemMenuName("생 과일 주스"); item.setUrl("/menu/07"); break;
+                                case "MENU0207": item.setSystemMenuName("떡볶이"); item.setUrl("/menu/08"); break;
+                                case "MENU0208": item.setSystemMenuName("대용량 1L 음료"); item.setUrl("/menu/09"); break;
+                                case "MENU0209": item.setSystemMenuName("요거트 아이스크림"); item.setUrl("/menu/10"); break;
                             };
                             break;
-                        case "03": item.setDepth1("80"); item.setSystemMenuName("장바구니");item.setUrl("/cart"); break;
-                        case "04": item.setDepth1("90"); item.setSystemMenuName("카카오 로그인");item.setUrl("/oauth2/authorization/kakao"); break;
-                        case "05": item.setDepth1("100"); item.setSystemMenuName("네이버 로그인"); item.setUrl("/oauth2/authorization/naver"); break;
-                        case "06":
-                            item.setDepth1("50");
+                        case "MENU03": item.setSystemMenuName("장바구니");item.setUrl("/cart"); break;
+                        case "MENU04": item.setSystemMenuName("카카오 로그인");item.setUrl("/oauth2/authorization/kakao"); break;
+                        case "MENU05": item.setSystemMenuName("네이버 로그인"); item.setUrl("/oauth2/authorization/naver"); break;
+                        case "MENU06":
+                            item.setDepth1("MENU50");
                             switch (item.getDepth2()) {
-                                case "00": item.setSystemMenuName("관리자-주문현황"); item.setUrl("/admin/01"); break;
-                                case "01": item.setSystemMenuName("관리자-결제현황"); item.setUrl("/admin/02"); break;
-                                case "02": item.setSystemMenuName("관리자-재고현황"); item.setUrl("/admin/03"); break;
-                                case "03": item.setSystemMenuName("관리자-기본정보관리"); item.setUrl("/admin/04"); break;
-                                case "04": item.setSystemMenuName("관리자-메뉴관리"); item.setUrl("/admin/05"); break;
+                                case "MENU5000": item.setSystemMenuName("관리자-주문현황"); item.setUrl("/admin/01"); break;
+                                case "MENU5001": item.setSystemMenuName("관리자-결제현황"); item.setUrl("/admin/02"); break;
+                                case "MENU5002": item.setSystemMenuName("관리자-재고현황"); item.setUrl("/admin/03"); break;
+                                case "MENU5003": item.setSystemMenuName("관리자-기본정보관리"); item.setUrl("/admin/04"); break;
+                                case "MENU5004": item.setSystemMenuName("관리자-메뉴관리"); item.setUrl("/admin/05"); break;
                             };
                             break;
                         default: item.setUrl("/"); break;
